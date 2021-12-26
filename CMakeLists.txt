@@ -4,6 +4,13 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 # project name and language
 project(bookLibrary LANGUAGES CXX)
 
+ADD_DEFINITIONS(
+-O3 -g -W -Wall
+ -Wunused-variable -Wunused-parameter -Wunused-function -Wunused
+ -Wno-deprecated -Woverloaded-virtual -Wwrite-strings
+ -D__WUR= -D_REENTRANT -D_FILE_OFFSET_BITS=64 -DTIXML_USE_STL
+)
+
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
