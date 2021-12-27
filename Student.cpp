@@ -1,6 +1,8 @@
 #include "Student.h"
 
-Student::Student(DBUtil dbUtil) { this->m_dbUtil = dbUtil; }
+Student::Student(DBUtil dbUtil) {
+  // this->m_dbUtil = dbUtil;
+}
 
 Student::~Student() {}
 

@@ -1,6 +1,8 @@
 #include "Manager.h"
 
-Manager::Manager(DBUtil dbUtil) { this->m_dbUtil = dbUtil; }
+Manager::Manager(DBUtil dbUtil) {
+  // this->m_dbUtil = dbUtil;
+}
 
 Manager::~Manager() {}
 
