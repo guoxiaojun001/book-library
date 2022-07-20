@@ -23,7 +23,7 @@
 #include "TimeUtil.h"
 #include "User.h"
 #include <iostream>
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include <vector>
 #pragma once
 

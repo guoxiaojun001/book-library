@@ -3,12 +3,14 @@ extern string szUsername; //用户名
 extern string szPswd;     //密码
 
 DBUtil::DBUtil() {
-  if (szUsername.empty() || szPswd.empty()) {
-    cout << "输入mysql账号名和密码";
-    cin >> szUsername;
-    cin >> szPswd;
-  }
-  szHost = "localhost";
+  // if (szUsername.empty() || szPswd.empty()) {
+  //   cout << "输入mysql账号名和密码";
+  //   cin >> szUsername;
+  //   cin >> szPswd;
+  // }
+  szUsername = "root";
+  szPswd = "123456";
+  szHost = "127.0.0.1";
   szDatabase = "library";
   nPort = 3306;
   isOpen = false;
@@ -89,16 +91,20 @@ bool DBUtil::AddBook(Book book) {
   string sql = "";
   char szTotal[16];
   char szLeftNum[16];
+   cout << "xssss" << endl;
   sprintf(szTotal, "%d", book.GetTotalNum());
-  sprintf(szLeftNum, "%d", book.GetTotalNum());
+  sprintf(szLeftNum, "%d", book.GetLeftNum());
+   cout << "AddBook" << endl;
 
   if (isOpen) {
     //获得时间
     mysql_query(&myCont,
                 "SET NAMES GBK"); //设置编码格式,否则在cmd下无法显示中文
-    sql += "insert into book values(null,'" + book.GetBookName() + "','" +
+    sql += "insert into book(bookname,author,isbn,pub,inDate,total,left) values('" + book.GetBookName() + "','" +
            book.GetAuthor() + "','" + book.GetISBN() + "','" + book.GetPub() +
            "','" + book.GetInDate() + "', " + szTotal + ", " + szLeftNum + ")";
+
+           cout << sql << endl;
     mysql_query(&myCont, sql.c_str());
   } else {
     cout << "connect failed!" << endl;

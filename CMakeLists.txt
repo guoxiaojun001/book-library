@@ -1,6 +1,9 @@
 # set minimum cmake version
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
+set(CMAKE_EXPORT_COMPILECOMMANDS ON)
+
+
 # project name and language
 project(bookLibrary LANGUAGES CXX)
 

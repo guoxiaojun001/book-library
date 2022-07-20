@@ -27,6 +27,7 @@ int main() {
   // 	return 0;
   // }
   user = dbUtil.ReadUser(strUserName, strUserPWD);
+  cout << user.m_strName << endl;
   while (user.m_nID == -1) {
     cout << "用户名或者密码错误，请重新输入,按任意键继续..." << endl;
     cin.get();

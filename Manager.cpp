@@ -34,24 +34,26 @@ bool Manager::AddBook() {
 
   cout << "你选择的是新增图书功能，请依次输入图书信息" << endl;
   cout << "图书名称 作者 ISBN 出版社 总册数" << endl;
-  cin >> bookName;
-  cin >> author;
-  cin >> isbn;
-  cin >> pub;
-  cin >> total;
+  // cin >> bookName;
+  // cin >> author;
+  // cin >> isbn;
+  // cin >> pub;
+  // cin >> total;
 
+  cout << "xxxx" << endl;
   Book book;
-  book.SetBookName(bookName);
-  book.SetAuthor(author);
-  book.SetISBN(isbn);
-  book.SetPub(pub);
-  book.SetTotalNum(total);
+  book.SetBookName("bookName");
+  book.SetAuthor("author");
+  book.SetISBN("isbn");
+  book.SetPub("pub");
+  book.SetTotalNum(100);
   book.SetLeftNum(0);
   book.SetInDate(szTime);
 
   if (!m_dbUtil.isOpen) {
-    m_dbUtil.OpenDB();
+   bool op = m_dbUtil.OpenDB();
   }
+  cout << "开始addBook图书" << endl;
   m_dbUtil.AddBook(book);
   cout << "新增图书成功" << endl;
   return true;
